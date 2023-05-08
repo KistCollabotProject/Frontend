@@ -38,7 +38,7 @@ class app:
 
 
 
-        self.rate = rospy.Rate(30) # 0.5hz
+        self.rate = rospy.Rate(0.3) # 0.5hz
 
 
     def app_publish(self):
@@ -58,7 +58,11 @@ class app:
             else:
                 pass
 
-            rospy.loginfo(count , self.bookcase[idx]) 
+            rospy.loginfo(count)
+            rospy.loginfo(self.bookcase[idx]) 
+
+            count +=1 
+            idx +=1
             
             self.rate.sleep() #100hz가 될때 까지 쉬기
 
