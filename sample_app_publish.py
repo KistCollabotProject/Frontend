@@ -32,7 +32,7 @@ class app:
         self.bookcase = ["book 1", "book 2","book 3","book 4", "book 5", "book 6","book 7","book 8","book 9"]
 
 
-        rospy.init_node('sceinaro_node', anonymous=True)
+        rospy.init_node('app_publish_node', anonymous=True)
         self.publisher1 = rospy.Publisher('bookcase_num', String, queue_size=10)
         self.publisher2 = rospy.Publisher('count', Int16, queue_size=10)
 
