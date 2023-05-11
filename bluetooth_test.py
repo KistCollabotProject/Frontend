@@ -6,7 +6,7 @@ from bluetooth import *
 
 target_name = "Galaxy S8+" #target device name
 target_address = "94:8B:C1:01:E2:71"
-port = 1 #RFCOMM port
+port = 6 #RFCOMM port
 
 nearby_devices = discover_devices()
 
