@@ -33,16 +33,25 @@ try:
     sock.connect((target_address,port))
     print("Success to connect target_address : ",target_address,"port : ", port)
 
-    sock.bind(("",port))
-    sock.listen(1)
 
-    client_socket, address = sock.accept()
 
     while True:
         try:
-            recv_data = client_socket.recv(1024)
-            msg = recv_data.decode()[:-2]
-            print("Received : %s" % msg)
+            recv_data = sock.recv(1024)
+
+
+            #receive Data: bytes type so we need to Encode/Decode when using with string
+            '''example
+            example of Encoding : my_bytes = b"Hello world"
+            example of Decoding : my_str = my_bytes.decode('utf-8')
+                                  my_str = str(bytes, 'utf-8')
+            '''
+            print('bytes receive : ' ,recv_data)
+            print('encode receive : ' ,recv_data.decode('utf-8'))
+
+
+            #msg = recv_data.decode()[:-2]
+            #print("Received : %s" % msg)
         
         except KeyboardInterrupt:
             print("disconnected")
